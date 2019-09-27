@@ -1,0 +1,335 @@
+{
+  "data": [
+    {
+      "type": "instance",
+      "subtype": "app-instance",
+      "componentId": "app",
+      "id": 4010090,
+      "isVisible": true,
+      "children": []
+    }
+  ],
+  "components": [
+    {
+      "type": "component",
+      "name": "Hero Section",
+      "id": 963629,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 5415335,
+                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  centered: true,\n  // value from 1-6\n  size: 1\n}",
+                  "id": 4342289,
+                  "isVisible": true,
+                  "children": []
+                }
+              ],
+              "id": 2060107,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "id": 8805486,
+          "isVisible": true
+        }
+      ],
+      "tags": [
+        "Hero",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "HeroSection",
+      "modulePath": "components/HeroSection"
+    },
+    {
+      "type": "component",
+      "name": "Section",
+      "id": 1079246,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "classNames": [
+            "hero",
+            "section",
+            "is-block",
+            "is-relative"
+          ],
+          "classNameExpressions": [
+            {
+              "js": "color",
+              "classNames": [
+                "is-{color}"
+              ]
+            },
+            {
+              "js": "size",
+              "classNames": [
+                "is-{size}"
+              ]
+            }
+          ],
+          "children": [
+            {
+              "type": "if",
+              "js": "backgroundImage",
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 1986700,
+                  "attributes": "{\n\timage: backgroundImage,\n  opacity: backgroundImageOpacity\n}",
+                  "id": 6976618,
+                  "isVisible": true,
+                  "children": []
+                }
+              ],
+              "id": 4689902,
+              "isVisible": true
+            },
+            {
+              "type": "children",
+              "id": 6313629,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "attributes": "{\n\t...otherProps\n}",
+          "style": "// Add light border if two white\n// sections next to each other.\n.is-white + &.is-white {\n  border-top: 1px solid #F0F0F0;\n}",
+          "id": 7573224,
+          "isVisible": true,
+          "image": "",
+          "name": ""
+        }
+      ],
+      "code": "\tconst {\n    color, \n    size, \n    backgroundImage,\n    backgroundImageOpacity,\n    children,\n    // Passed to section element\n    ...otherProps \n  } = props;\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "Section",
+      "modulePath": "components/Section"
+    },
+    {
+      "type": "component",
+      "name": "Section Header",
+      "id": 5415335,
+      "children": [
+        {
+          "type": "if",
+          "js": "props.title || props.subtitle",
+          "id": 8933982,
+          "children": [
+            {
+              "type": "element",
+              "tagName": "header",
+              "children": [
+                {
+                  "type": "if",
+                  "js": "props.title",
+                  "id": 3832557,
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "h1",
+                      "classNames": [
+                        "title",
+                        "is-spaced",
+                        "has-text-weight-bold"
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "{props.title}",
+                          "id": 3346646,
+                          "isVisible": true,
+                          "children": []
+                        }
+                      ],
+                      "classNameExpressions": [
+                        {
+                          "js": "props.size",
+                          "classNames": [
+                            "is-{props.size}"
+                          ]
+                        },
+                        {
+                          "js": "props.size === 1",
+                          "classNames": [
+                            "is-size-2-mobile"
+                          ]
+                        }
+                      ],
+                      "id": 5428871,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true
+                },
+                {
+                  "type": "if",
+                  "js": "props.subtitle",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "p",
+                      "classNames": [
+                        "subtitle"
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "{props.subtitle}",
+                          "id": 4050505,
+                          "isVisible": true,
+                          "children": []
+                        }
+                      ],
+                      "id": 2045497,
+                      "classNameExpressions": [
+                        {
+                          "js": "props.size > 4",
+                          "classNames": [
+                            "is-6"
+                          ]
+                        }
+                      ],
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "style": ""
+                    }
+                  ],
+                  "id": 4428299,
+                  "isVisible": true
+                }
+              ],
+              "classNameExpressions": [
+                {
+                  "js": "props.centered",
+                  "classNames": [
+                    "is-centered"
+                  ]
+                }
+              ],
+              "style": "margin-bottom: 3rem;\n\n// Remove margin if nothing after header\n&:last-child{\n  margin-bottom: 0;\n}\n\n// Added if props.centered is true\n&.is-centered {\n  text-align: center;\n}\n\n.subtitle {\n\tmax-width: 700px;\n  // So we can have max-width but still\n  // have alignment controlled by text-align.\n  display: inline-block;\n}",
+              "id": 4841502,
+              "name": "Header",
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "classNames": []
+            }
+          ],
+          "isVisible": true
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "SectionHeader",
+      "modulePath": "components/SectionHeader"
+    },
+    {
+      "type": "component",
+      "name": "Background Image",
+      "id": 1986700,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "attributes": "{\n  style: {\n    '--image': `url(${props.image})`,\n    '--opacity': props.opacity\n  }\n}",
+          "style": "content: \"\";\nbackground-image: var(--image);\nbackground-position: center center;\nbackground-size: cover;\nopacity: var(--opacity);\ntop: 0;\nleft: 0;\nbottom: 0;\nright: 0;\nposition: absolute;\nz-index: 0;",
+          "id": 4730303,
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "classNames": [],
+          "classNameExpressions": [],
+          "children": []
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "BackgroundImage",
+      "modulePath": "components/BackgroundImage"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 963629,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  title: \"Temporarily down for maintenance\",\n  subtitle: \"Our website is temporarily down for maintenance. If you want to get in touch with us while our website is down, you can still send us an email at: info@annamariabeachcondo.com \",\n  buttonOnClick: () => {\n    router.push('/pricing');\n  }\n}",
+          "id": 7627387,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Hero Section"
+        }
+      ],
+      "id": 2510705,
+      "isVisible": true,
+      "code": "",
+      "nameFormatted": "HomePage",
+      "modulePath": "pages/home"
+    },
+    {
+      "id": "app",
+      "type": "component",
+      "subtype": "app-component",
+      "globalStyle": "// COLORS\n$primary: #00d1b2;\n$info: #209CEE;\n$success: #23D160;\n$warning: #FFDD57;\n$danger: #FF3860;\n$light: #F5F5F5;\n$dark: #363636;\n\n// TEXT\n$text: #4A4A4A;\n$link: #3273DC;\n$body-family: BlinkMacSystemFont, -apple-system, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", \"Helvetica\", \"Arial\", sans-serif;\n$title-family: false;\n$button-family: false;\n\n// BREAKPOINTS\n$gap: 32px;\n$tablet: 769px;\n$desktop: 960px + (2*$gap);\n$widescreen: 1152px + (2*$gap);\n$fullhd: 1344px + (2*$gap);\n$widescreen-enabled: true;\n$fullhd-enabled: false;\n\n// LAYOUT\n$section-padding: 3rem 1.5rem;\n$section-padding-medium: 6rem 1.5rem;\n$section-padding-large: 9rem 1.5rem;\n\n// SEE DOCS FOR MORE: \n// https://bit.ly/30UvE5O\n\n// IMPORT BULMA\n@import \"~bulma/bulma.sass\";",
+      "isVisible": true,
+      "code": "",
+      "children": [
+        {
+          "type": "pages",
+          "id": 3987374,
+          "isVisible": true,
+          "children": [
+            {
+              "type": "instance",
+              "subtype": "page-instance",
+              "componentId": 2510705,
+              "ONLY_FOR_RENDER": true,
+              "id": 7051494,
+              "isVisible": true,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "nameFormatted": "App",
+      "modulePath": "pages/_app"
+    }
+  ]
+}
